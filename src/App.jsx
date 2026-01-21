@@ -2,7 +2,6 @@ import React, { useMemo, useState } from "react";
 
 export default function HumanCopyBetaLanding() {
   const [choice, setChoice] = useState("79");
-  const [showThanks, setShowThanks] = useState(false);
 
   const priceLabel = useMemo(() => {
     if (choice === "0") return "0 € (nur wenn es passt)";
@@ -23,7 +22,14 @@ export default function HumanCopyBetaLanding() {
       <header className="sticky top-0 z-50 border-b border-zinc-800/70 bg-zinc-950/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-2xl bg-zinc-100/10 ring-1 ring-zinc-700/60" />
+            <img
+              src="/human-copy-beta-edition/assets/img/human-copy-logo.png"
+              alt="Human Copy Logo"
+              className="h-9 w-auto"
+              onError={(event) => {
+                event.currentTarget.src = "/human-copy-beta-edition/assets/img/logo-mark.png";
+              }}
+            />
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-wide">Human Copy</div>
               <div className="text-[11px] text-zinc-400">Beta Edition</div>
@@ -93,6 +99,17 @@ export default function HumanCopyBetaLanding() {
 
               <p className="mt-3 text-xs text-zinc-500">Kein Newsletter. Kein Spam. Nur dein Projekt.</p>
 
+              <div className="mt-6 flex md:hidden">
+                <img
+                  src="/human-copy-beta-edition/assets/img/profile-charlotte.jpg"
+                  alt="Charlotte Grude"
+                  className="h-auto w-40 rounded-2xl"
+                  onError={(event) => {
+                    event.currentTarget.src = "/human-copy-beta-edition/assets/img/charlotte.jpg";
+                  }}
+                />
+              </div>
+
               <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <StatCard title="1 Text" desc="bis ca. 900–1.200 Wörter" />
                 <StatCard title="1 Revision" desc="inklusive" />
@@ -102,6 +119,16 @@ export default function HumanCopyBetaLanding() {
 
             {/* Hero card */}
             <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 shadow-xl">
+              <div className="mb-5 hidden md:flex">
+                <img
+                  src="/human-copy-beta-edition/assets/img/profile-charlotte.jpg"
+                  alt="Charlotte Grude"
+                  className="h-auto w-40 rounded-2xl"
+                  onError={(event) => {
+                    event.currentTarget.src = "/human-copy-beta-edition/assets/img/charlotte.jpg";
+                  }}
+                />
+              </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="text-sm font-semibold">Human Copy — Beta Edition</div>
@@ -304,14 +331,14 @@ export default function HumanCopyBetaLanding() {
           <Card>
             <form
               className="space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setShowThanks(true);
-              }}
+              action="https://formspree.io/f/mpqqkadp"
+              method="POST"
             >
+              <input type="hidden" name="_redirect" value="/human-copy-beta-edition/thanks" />
               <div>
                 <label className="text-xs font-semibold text-zinc-300">Name</label>
                 <input
+                  name="name"
                   className="mt-2 w-full rounded-2xl border border-zinc-800 bg-zinc-950/50 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-200/40"
                   placeholder="Dein Name"
                   required
@@ -322,6 +349,7 @@ export default function HumanCopyBetaLanding() {
                 <label className="text-xs font-semibold text-zinc-300">E-Mail</label>
                 <input
                   type="email"
+                  name="email"
                   className="mt-2 w-full rounded-2xl border border-zinc-800 bg-zinc-950/50 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-200/40"
                   placeholder="Deine E-Mail für die Rückmeldung"
                   required
@@ -332,6 +360,7 @@ export default function HumanCopyBetaLanding() {
               <div>
                 <label className="text-xs font-semibold text-zinc-300">Text oder Link</label>
                 <textarea
+                  name="text_or_link"
                   rows={5}
                   className="mt-2 w-full resize-none rounded-2xl border border-zinc-800 bg-zinc-950/50 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-200/40"
                   placeholder="Text einfügen oder Link senden"
@@ -343,6 +372,7 @@ export default function HumanCopyBetaLanding() {
               <div>
                 <label className="text-xs font-semibold text-zinc-300">Ziel / Kontext</label>
                 <textarea
+                  name="context"
                   rows={3}
                   className="mt-2 w-full resize-none rounded-2xl border border-zinc-800 bg-zinc-950/50 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-200/40"
                   placeholder="Wofür ist der Text? Wer liest ihn? Was soll passieren?"
@@ -355,7 +385,8 @@ export default function HumanCopyBetaLanding() {
                   <label className="flex cursor-pointer items-center gap-2">
                     <input
                       type="radio"
-                      name="choice"
+                      name="option"
+                      value="79"
                       checked={choice === "79"}
                       onChange={() => setChoice("79")}
                       className="h-4 w-4 accent-zinc-100"
@@ -365,7 +396,8 @@ export default function HumanCopyBetaLanding() {
                   <label className="flex cursor-pointer items-center gap-2">
                     <input
                       type="radio"
-                      name="choice"
+                      name="option"
+                      value="0"
                       checked={choice === "0"}
                       onChange={() => setChoice("0")}
                       className="h-4 w-4 accent-zinc-100"
@@ -376,7 +408,13 @@ export default function HumanCopyBetaLanding() {
               </div>
 
               <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-zinc-800 bg-zinc-950/40 p-4">
-                <input type="checkbox" required className="mt-0.5 h-4 w-4 accent-zinc-100" />
+                <input
+                  type="checkbox"
+                  name="detector_ack"
+                  value="yes"
+                  required
+                  className="mt-0.5 h-4 w-4 accent-zinc-100"
+                />
                 <span className="text-sm text-zinc-300">Ich habe verstanden: keine Detektor-Optimierung.</span>
               </label>
 
@@ -399,40 +437,13 @@ export default function HumanCopyBetaLanding() {
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div className="text-sm text-zinc-400">© {new Date().getFullYear()} Human Copy</div>
             <div className="flex flex-wrap gap-3 text-sm text-zinc-400">
-              <a href="#" className="hover:text-zinc-200">Impressum</a>
-              <a href="#" className="hover:text-zinc-200">Datenschutz</a>
+              <a href="/human-copy-beta-edition/impressum" className="hover:text-zinc-200">Impressum</a>
+              <a href="/human-copy-beta-edition/datenschutz" className="hover:text-zinc-200">Datenschutz</a>
               <a href="#" className="hover:text-zinc-200">Kontakt</a>
             </div>
           </div>
         </div>
       </footer>
-
-      {showThanks && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 px-4">
-          <div className="w-full max-w-lg rounded-3xl border border-zinc-800 bg-zinc-900/90 p-6 shadow-2xl">
-            <div className="text-sm font-semibold text-zinc-100">Danke für deine Anfrage.</div>
-            <p className="mt-3 text-sm text-zinc-300">
-              Ich schaue mir deinen Text an und melde mich persönlich innerhalb von 24 Stunden zurück.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
-              <button
-                type="button"
-                className="rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-2 text-sm font-semibold text-zinc-200 hover:bg-zinc-100/10"
-                onClick={() => setShowThanks(false)}
-              >
-                Schließen
-              </button>
-              <a
-                href="#optionen"
-                className="rounded-2xl bg-zinc-100 px-4 py-2 text-center text-sm font-semibold text-zinc-900 hover:bg-white"
-                onClick={() => setShowThanks(false)}
-              >
-                Optionen ansehen
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
