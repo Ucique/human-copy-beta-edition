@@ -22,7 +22,14 @@ export default function HumanCopyBetaLanding() {
       <header className="sticky top-0 z-50 border-b border-zinc-800/70 bg-zinc-950/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-2xl bg-zinc-100/10 ring-1 ring-zinc-700/60" />
+            <img
+              src="/human-copy-beta-edition/assets/img/human-copy-logo.png"
+              alt="Human Copy Logo"
+              className="h-9 w-auto"
+              onError={(event) => {
+                event.currentTarget.src = "/human-copy-beta-edition/assets/img/logo-mark.png";
+              }}
+            />
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-wide">Human Copy</div>
               <div className="text-[11px] text-zinc-400">Beta Edition</div>
@@ -92,6 +99,17 @@ export default function HumanCopyBetaLanding() {
 
               <p className="mt-3 text-xs text-zinc-500">Kein Newsletter. Kein Spam. Nur dein Projekt.</p>
 
+              <div className="mt-6 flex md:hidden">
+                <img
+                  src="/human-copy-beta-edition/assets/img/profile-charlotte.jpg"
+                  alt="Charlotte Grude"
+                  className="h-auto w-40 rounded-2xl"
+                  onError={(event) => {
+                    event.currentTarget.src = "/human-copy-beta-edition/assets/img/charlotte.jpg";
+                  }}
+                />
+              </div>
+
               <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <StatCard title="1 Text" desc="bis ca. 900–1.200 Wörter" />
                 <StatCard title="1 Revision" desc="inklusive" />
@@ -101,6 +119,16 @@ export default function HumanCopyBetaLanding() {
 
             {/* Hero card */}
             <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 shadow-xl">
+              <div className="mb-5 hidden md:flex">
+                <img
+                  src="/human-copy-beta-edition/assets/img/profile-charlotte.jpg"
+                  alt="Charlotte Grude"
+                  className="h-auto w-40 rounded-2xl"
+                  onError={(event) => {
+                    event.currentTarget.src = "/human-copy-beta-edition/assets/img/charlotte.jpg";
+                  }}
+                />
+              </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="text-sm font-semibold">Human Copy — Beta Edition</div>
