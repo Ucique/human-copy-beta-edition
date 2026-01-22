@@ -13,12 +13,16 @@
   <body>
     <header class="topbar">
       <div class="container topbar__inner">
-        <div class="brand">
-          <div class="brand__text">
-            <div class="brand__title">Human Copy</div>
-            <div class="brand__subtitle">Beta Edition</div>
-          </div>
-        </div>
+        <a class="brand" href="/human-copy-beta-edition/" aria-label="Human Copy Startseite">
+          <img
+            class="brand__logo"
+            src="./assets/img/human-copy-logo.png"
+            alt="Human Copy Logo"
+            width="160"
+            height="48"
+            loading="eager"
+          />
+        </a>
         <nav class="topbar__nav" aria-label="Sektionen">
           <a href="#warum">Warum</a>
           <a href="#leistung">Was du bekommst</a>
@@ -349,11 +353,46 @@
           </div>
         </div>
       </section>
+
+      <section class="section about">
+        <div class="container">
+          <div class="about-card">
+            <div class="about-card__media">
+              <img
+                src="./assets/img/profile-charlotte.jpg"
+                alt="Charlotte, Copywriterin"
+                class="about-card__photo"
+                width="140"
+                height="140"
+                loading="lazy"
+              />
+            </div>
+            <div class="about-card__content">
+              <p class="about-card__title">Hey, ich bin Charlotte.</p>
+              <p class="about-card__text">
+                Copywriterin &amp; Texterin — 10+ Jahre Text-Erfahrung, 3 Jahre Online-Marketing.
+              </p>
+              <p class="about-card__text">
+                Ich mache Texte nicht hübscher. Ich mache sie wirksam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer__inner">
         <div>© <span id="year">2024</span> Human Copy</div>
+        <div class="footer__signature">
+          <img
+            src="./assets/img/human-copy-logo.png"
+            alt="Human Copy Signatur"
+            width="200"
+            height="60"
+            loading="lazy"
+          />
+        </div>
         <div class="footer__links">
           <a href="./legal/impressum.html">Impressum</a>
           <a href="./legal/datenschutz.html">Datenschutz</a>
