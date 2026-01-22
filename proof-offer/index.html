@@ -9,12 +9,20 @@
   <body>
     <header class="topbar">
       <div class="container topbar__inner">
-        <div class="brand">
-          <div class="brand__text">
-            <div class="brand__title">Human Copy</div>
-            <div class="brand__subtitle">Beta Edition</div>
-          </div>
-        </div>
+        <a class="brand" href="../index.html" aria-label="Human Copy Startseite">
+          <img
+            class="brand__logo"
+            src="../assets/img/human-copy-logo.png"
+            alt="Human Copy Logo"
+            width="160"
+            height="48"
+            loading="eager"
+          />
+          <span class="brand__text">
+            <span class="brand__title">Human Copy</span>
+            <span class="brand__subtitle">Beta Edition</span>
+          </span>
+        </a>
         <a class="btn btn--primary" href="../index.html">Zurück zur Startseite</a>
       </div>
     </header>
@@ -36,13 +44,37 @@
 
     <footer class="site-footer">
       <div class="container footer__inner">
-        <div>© <span id="year">2024</span> Human Copy</div>
+        <div class="footer__copy">© <span id="year">2024</span> Human Copy</div>
+        <div class="footer__signature">
+          <img
+            src="../assets/img/human-copy-logo.png"
+            alt="Human Copy Signatur"
+            width="200"
+            height="60"
+            loading="lazy"
+          />
+        </div>
         <div class="footer__links">
           <a href="../legal/impressum.html">Impressum</a>
           <a href="../legal/datenschutz.html">Datenschutz</a>
+          <button class="link-button" type="button" data-cookie-settings>Cookie-Einstellungen</button>
         </div>
       </div>
     </footer>
+
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-hidden="true">
+      <div class="cookie-banner__content">
+        <p>
+          Diese Website nutzt Cookies für grundlegende Funktionen und — nur mit deiner Einwilligung — Google Analytics,
+          um die Nutzung anonymisiert zu messen.
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="btn btn--ghost" type="button" data-cookie-decline>Nur notwendige</button>
+          <button class="btn btn--primary" type="button" data-cookie-accept>Akzeptieren</button>
+        </div>
+        <a class="cookie-banner__link" href="../legal/cookies.html">Mehr erfahren</a>
+      </div>
+    </div>
 
     <script src="../assets/js/main.js"></script>
   </body>

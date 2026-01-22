@@ -22,6 +22,10 @@
             height="48"
             loading="eager"
           />
+          <span class="brand__text">
+            <span class="brand__title">Human Copy</span>
+            <span class="brand__subtitle">Beta Edition</span>
+          </span>
         </a>
         <nav class="topbar__nav" aria-label="Sektionen">
           <a href="#warum">Warum</a>
@@ -302,6 +306,27 @@
           </div>
           <div class="card-grid">
             <article class="card">
+              <div class="trust-block">
+                <div class="trust-block__media">
+                  <img
+                    src="./assets/img/profile-charlotte.jpg"
+                    alt="Charlotte, Copywriterin"
+                    class="trust-block__photo"
+                    width="96"
+                    height="96"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="trust-block__content">
+                  <p class="trust-block__title">Hey, ich bin Charlotte.</p>
+                  <p class="trust-block__text">
+                    Copywriterin &amp; Texterin — 10+ Jahre Text-Erfahrung, 3 Jahre Online-Marketing.
+                  </p>
+                  <p class="trust-block__text">
+                    Ich mache Texte nicht hübscher. Ich mache sie wirksam.
+                  </p>
+                </div>
+              </div>
               <div class="card__title">Was ich von dir brauche</div>
               <ul>
                 <li>Deinen aktuellen Text (KI oder Mischtext – egal)</li>
@@ -381,37 +406,12 @@
         </div>
       </section>
 
-      <section class="section about">
-        <div class="container">
-          <div class="about-card">
-            <div class="about-card__media">
-              <img
-                src="./assets/img/profile-charlotte.jpg"
-                alt="Charlotte, Copywriterin"
-                class="about-card__photo"
-                width="140"
-                height="140"
-                loading="lazy"
-              />
-            </div>
-            <div class="about-card__content">
-              <p class="about-card__title">Hey, ich bin Charlotte.</p>
-              <p class="about-card__text">
-                Copywriterin &amp; Texterin — 10+ Jahre Text-Erfahrung, 3 Jahre Online-Marketing.
-              </p>
-              <p class="about-card__text">
-                Ich mache Texte nicht hübscher. Ich mache sie wirksam.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer__inner">
-        <div>© <span id="year">2024</span> Human Copy</div>
-        <div class="footer__signature brand-mark">
+        <div class="footer__copy">© <span id="year">2024</span> Human Copy</div>
+        <div class="footer__signature">
           <img
             src="./assets/img/human-copy-logo.png"
             alt="Human Copy Signatur"
@@ -423,9 +423,24 @@
         <div class="footer__links">
           <a href="./legal/impressum.html">Impressum</a>
           <a href="./legal/datenschutz.html">Datenschutz</a>
+          <button class="link-button" type="button" data-cookie-settings>Cookie-Einstellungen</button>
         </div>
       </div>
     </footer>
+
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-hidden="true">
+      <div class="cookie-banner__content">
+        <p>
+          Diese Website nutzt Cookies für grundlegende Funktionen und — nur mit deiner Einwilligung — Google Analytics,
+          um die Nutzung anonymisiert zu messen.
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="btn btn--ghost" type="button" data-cookie-decline>Nur notwendige</button>
+          <button class="btn btn--primary" type="button" data-cookie-accept>Akzeptieren</button>
+        </div>
+        <a class="cookie-banner__link" href="./legal/cookies.html">Mehr erfahren</a>
+      </div>
+    </div>
 
     <div class="modal" id="modal" aria-hidden="true">
       <div class="modal__overlay" data-modal-close></div>

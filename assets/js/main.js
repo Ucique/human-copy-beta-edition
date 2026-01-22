@@ -5,8 +5,15 @@ const statusText = document.querySelector('.form-status');
 const modal = document.querySelector('#modal');
 const closeButtons = document.querySelectorAll('[data-modal-close]');
 const yearEl = document.querySelector('#year');
+const cookieBanner = document.querySelector('#cookie-banner');
+const cookieAcceptButton = document.querySelector('[data-cookie-accept]');
+const cookieDeclineButton = document.querySelector('[data-cookie-decline]');
+const cookieSettingsButtons = document.querySelectorAll('[data-cookie-settings]');
 
 let lastFocusedElement = null;
+
+const COOKIE_CONSENT_KEY = 'hc_cookie_consent';
+const GA_MEASUREMENT_ID = 'G-2DBL2MMR17';
 
 const updatePriceLabel = () => {
   const selected = document.querySelector('input[name="option"]:checked');
@@ -141,6 +148,85 @@ document.addEventListener('keydown', (event) => {
 
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
+}
+
+const loadAnalytics = () => {
+  if (document.querySelector('script[data-ga4]')) return;
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = window.gtag || gtag;
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  script.dataset.ga4 = 'true';
+  document.head.appendChild(script);
+};
+
+const getStoredConsent = () => {
+  try {
+    return window.localStorage.getItem(COOKIE_CONSENT_KEY);
+  } catch (error) {
+    return null;
+  }
+};
+
+const setStoredConsent = (value) => {
+  try {
+    window.localStorage.setItem(COOKIE_CONSENT_KEY, value);
+  } catch (error) {
+    // Ignore storage errors.
+  }
+};
+
+const showCookieBanner = () => {
+  if (!cookieBanner) return;
+  cookieBanner.classList.add('is-visible');
+  cookieBanner.setAttribute('aria-hidden', 'false');
+};
+
+const hideCookieBanner = () => {
+  if (!cookieBanner) return;
+  cookieBanner.classList.remove('is-visible');
+  cookieBanner.setAttribute('aria-hidden', 'true');
+};
+
+const handleConsent = (value) => {
+  setStoredConsent(value);
+  hideCookieBanner();
+  if (value === 'accepted') {
+    loadAnalytics();
+  }
+};
+
+if (cookieAcceptButton) {
+  cookieAcceptButton.addEventListener('click', () => handleConsent('accepted'));
+}
+
+if (cookieDeclineButton) {
+  cookieDeclineButton.addEventListener('click', () => handleConsent('declined'));
+}
+
+cookieSettingsButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    showCookieBanner();
+    if (cookieAcceptButton) {
+      cookieAcceptButton.focus();
+    }
+  });
+});
+
+const currentConsent = getStoredConsent();
+if (currentConsent === 'accepted') {
+  loadAnalytics();
+} else if (currentConsent === 'declined') {
+  hideCookieBanner();
+} else {
+  showCookieBanner();
 }
 
 updatePriceLabel();
