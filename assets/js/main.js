@@ -4,8 +4,6 @@ const form = document.querySelector('#beta-form');
 const statusText = document.querySelector('.form-status');
 const modal = document.querySelector('#modal');
 const closeButtons = document.querySelectorAll('[data-modal-close]');
-const yearEl = document.querySelector('#year');
-
 let lastFocusedElement = null;
 
 const updatePriceLabel = () => {
@@ -138,9 +136,5 @@ document.addEventListener('keydown', (event) => {
   }
   handleTrapFocus(event);
 });
-
-if (yearEl) {
-  yearEl.textContent = String(new Date().getFullYear());
-}
 
 updatePriceLabel();
