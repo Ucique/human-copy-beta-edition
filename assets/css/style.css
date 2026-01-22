@@ -224,6 +224,13 @@ h1 {
   font-size: 1.05rem;
 }
 
+.hero__urgency {
+  margin-top: 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -399,7 +406,7 @@ h1 {
 
 .card-grid {
   display: grid;
-  gap: 16px;
+  gap: 24px;
 }
 
 .card-grid--three {
@@ -485,7 +492,7 @@ h1 {
 
 .step-grid {
   display: grid;
-  gap: 16px;
+  gap: 24px;
 }
 
 .step-card {
@@ -659,7 +666,7 @@ input[type="checkbox"] {
 }
 
 .footer-mark img {
-  height: clamp(32px, 4vw, 48px);
+  height: clamp(40px, 5vw, 60px);
   width: auto;
   opacity: 0.9;
 }
