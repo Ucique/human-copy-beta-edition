@@ -9,12 +9,20 @@
   <body>
     <header class="topbar">
       <div class="container topbar__inner">
-        <div class="brand">
-          <div class="brand__text">
-            <div class="brand__title">Human Copy</div>
-            <div class="brand__subtitle">Beta Edition</div>
-          </div>
-        </div>
+        <a class="brand" href="../index.html" aria-label="Human Copy Startseite">
+          <img
+            class="brand__logo"
+            src="../assets/img/human-copy-logo.png"
+            alt="Human Copy Logo"
+            width="160"
+            height="48"
+            loading="eager"
+          />
+          <span class="brand__text">
+            <span class="brand__title">Human Copy</span>
+            <span class="brand__subtitle">Beta Edition</span>
+          </span>
+        </a>
         <a class="btn btn--primary" href="../index.html">Zurück zur Startseite</a>
       </div>
     </header>
@@ -26,8 +34,50 @@
             <div class="section-title__kicker">Legal</div>
             <h1>Datenschutz</h1>
           </div>
-          <div class="card">
-            <p>Diese Seite wird in Kürze mit den erforderlichen Angaben ergänzt.</p>
+          <div class="card legal-content">
+            <h2>Datenschutz auf einen Blick</h2>
+            <p>
+              Der Schutz deiner Daten ist mir wichtig. Ich verarbeite personenbezogene Daten nur, wenn es für die
+              Bereitstellung dieser Website und die Kommunikation notwendig ist oder du eingewilligt hast.
+            </p>
+
+            <h3>Verantwortliche Stelle</h3>
+            <p>Human Copy (Beta Edition), Charlotte — Copywriterin &amp; Texterin, Berlin, Deutschland.</p>
+            <p>E-Mail: hello@human-copy.com</p>
+
+            <h3>Kontaktformular (Formspree)</h3>
+            <p>
+              Wenn du das Anfrage-Formular nutzt, werden die von dir eingegebenen Daten (Name, E-Mail, Text, Kontext)
+              an Formspree (Formspree Inc., USA) übermittelt, um deine Anfrage zuzustellen. Die Verarbeitung erfolgt zur
+              Bearbeitung deiner Anfrage (Art. 6 Abs. 1 lit. b DSGVO). Weitere Informationen findest du bei Formspree:
+              https://formspree.io/legal.
+            </p>
+
+            <h3>Google Analytics (nur nach Einwilligung)</h3>
+            <p>
+              Ich nutze Google Analytics 4, um die Nutzung der Website zu verstehen und zu verbessern. Analytics wird
+              ausschließlich geladen, wenn du über das Cookie-Banner zustimmst. Rechtsgrundlage ist deine Einwilligung
+              (Art. 6 Abs. 1 lit. a DSGVO). Du kannst deine Entscheidung jederzeit über „Cookie-Einstellungen“ im Footer
+              ändern. Die IP-Adresse wird nur gekürzt verarbeitet.
+            </p>
+
+            <h3>Cookies &amp; Local Storage</h3>
+            <p>
+              Für die Einwilligung speichert diese Website eine Einstellung im Local Storage deines Browsers
+              (hc_cookie_consent). Notwendige Cookies werden nicht gesetzt; Analytics-Cookies nur nach Einwilligung.
+            </p>
+
+            <h3>Speicherdauer</h3>
+            <p>
+              Daten aus dem Kontaktformular werden so lange gespeichert, wie es für die Bearbeitung der Anfrage
+              erforderlich ist. Analyse-Daten werden gemäß den Vorgaben von Google gespeichert.
+            </p>
+
+            <h3>Deine Rechte</h3>
+            <p>
+              Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie auf
+              Datenübertragbarkeit. Außerdem kannst du eine erteilte Einwilligung jederzeit widerrufen.
+            </p>
           </div>
           <div class="actions">
             <a class="btn btn--ghost" href="../index.html">Zurück zur Startseite</a>
@@ -38,13 +88,37 @@
 
     <footer class="site-footer">
       <div class="container footer__inner">
-        <div>© <span id="year">2024</span> Human Copy</div>
+        <div class="footer__copy">© <span id="year">2024</span> Human Copy</div>
+        <div class="footer__signature">
+          <img
+            src="../assets/img/human-copy-logo.png"
+            alt="Human Copy Signatur"
+            width="200"
+            height="60"
+            loading="lazy"
+          />
+        </div>
         <div class="footer__links">
           <a href="../legal/impressum.html">Impressum</a>
           <a href="../legal/datenschutz.html">Datenschutz</a>
+          <button class="link-button" type="button" data-cookie-settings>Cookie-Einstellungen</button>
         </div>
       </div>
     </footer>
+
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-hidden="true">
+      <div class="cookie-banner__content">
+        <p>
+          Diese Website nutzt Cookies für grundlegende Funktionen und — nur mit deiner Einwilligung — Google Analytics,
+          um die Nutzung anonymisiert zu messen.
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="btn btn--ghost" type="button" data-cookie-decline>Nur notwendige</button>
+          <button class="btn btn--primary" type="button" data-cookie-accept>Akzeptieren</button>
+        </div>
+        <a class="cookie-banner__link" href="../legal/cookies.html">Mehr erfahren</a>
+      </div>
+    </div>
 
     <script src="../assets/js/main.js"></script>
   </body>
