@@ -74,7 +74,7 @@
                 <div class="hero-card__title">Human Copy — Beta Edition</div>
                 <div class="hero-card__subtitle">Proof statt Theater. Fairer Deal.</div>
               </div>
-              <div class="hero-card__price" data-price-label>79 € (empfohlen)</div>
+              <div class="hero-card__price" data-price-label>79 €</div>
             </div>
 
             <ul class="bullet-list">
@@ -194,7 +194,7 @@
             <article class="card">
               <div class="card__row">
                 <div>
-                  <div class="card__title">Option A — 79 € (empfohlen)</div>
+                  <div class="card__title">Option A — 79 €</div>
                   <div class="card__subtitle">Schnell, sauber, fair.</div>
                 </div>
                 <div class="pill">79 €</div>
@@ -287,7 +287,7 @@
               </div>
             </article>
             <article class="card">
-              <form id="beta-form">
+              <form id="beta-form" action="https://formspree.io/f/mpqqkadp" method="POST">
                 <div class="field">
                   <label for="name">Name</label>
                   <input id="name" name="name" type="text" placeholder="Dein Name" required />
@@ -307,7 +307,7 @@
                   <label for="text-or-link">Text oder Link</label>
                   <textarea
                     id="text-or-link"
-                    name="text_or_link"
+                    name="text"
                     rows="5"
                     placeholder="Text einfügen oder Link senden"
                     required
@@ -328,7 +328,7 @@
                   <legend>Option</legend>
                   <label class="radio">
                     <input type="radio" name="option" value="79" checked required />
-                    Option A — 79 € (empfohlen)
+                    Option A — 79 €
                   </label>
                   <label class="radio">
                     <input type="radio" name="option" value="0" />
@@ -337,12 +337,13 @@
                 </fieldset>
 
                 <label class="checkbox">
-                  <input type="checkbox" name="detector_ack" value="yes" required />
+                  <input type="checkbox" name="no_detector_ack" value="yes" required />
                   <span>Ich habe verstanden: keine Detektor-Optimierung.</span>
                 </label>
 
                 <button class="btn btn--primary" type="submit">Beta-Platz anfragen</button>
                 <p class="form-note">Ich melde mich persönlich. Kein Funnel, kein Theater.</p>
+                <p class="form-status" role="status" aria-live="polite"></p>
               </form>
             </article>
           </div>
