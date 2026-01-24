@@ -425,8 +425,61 @@ h1 {
   margin-top: 24px;
 }
 
+.card-grid + .effort-note {
+  margin-top: 24px;
+}
+
+.effort-note + .callout {
+  margin-top: 20px;
+}
+
 .card-grid + .callout {
   margin-top: 24px;
+}
+
+.effort-note {
+  margin-top: 16px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 100%;
+}
+
+.effort-note__title {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(242, 239, 233, 0.72);
+  margin-bottom: 8px;
+}
+
+.effort-note__body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(242, 239, 233, 0.78);
+}
+
+.effort-note__body strong {
+  color: rgba(242, 239, 233, 0.92);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .effort-note {
+    padding: 12px 14px;
+    margin-top: 14px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .effort-note__body {
+    font-size: 12.5px;
+  }
 }
 
 .card-grid--three {
