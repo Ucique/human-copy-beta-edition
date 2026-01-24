@@ -99,7 +99,8 @@ if (form) {
         if (statusText) {
           statusText.textContent = 'Gesendet.';
         }
-        openModal();
+        window.location.href = '/thank-you.html';
+        return;
       } else if (statusText) {
         statusText.textContent =
           'Senden hat nicht geklappt. Bitte nochmal oder per Mail: hello@human-copy.com';
