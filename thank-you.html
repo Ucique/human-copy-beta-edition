@@ -1,29 +1,83 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
     <title>Anfrage erhalten – Human Copy</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17865891467"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'AW-17865891467');
     </script>
     <script>
-  gtag('event', 'conversion', {
-    'send_to': 'AW-17865891467/ZrRbCJnyyboELH9j8dC',
-    'value': 1.0,
-    'currency': 'EUR'
-  });
-</script>
+      gtag('event', 'conversion', {
+        send_to: 'AW-17865891467/ZrRbCJnyyboELH9j8dC',
+        value: 1.0,
+        currency: 'EUR',
+      });
+    </script>
+    <style>
+      body.thank-you-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(120% 120% at 50% 0%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%),
+          var(--bg);
+        padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
+      }
+
+      .thank-you {
+        width: min(720px, 100%);
+      }
+
+      .thank-you__card {
+        text-align: center;
+        padding: clamp(2.5rem, 5vw, 3.5rem);
+        display: grid;
+        gap: 1rem;
+        justify-items: center;
+      }
+
+      .thank-you__lead {
+        font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+        max-width: 44ch;
+        margin: 0 auto;
+      }
+
+      .thank-you__note {
+        color: var(--muted);
+        font-size: 0.98rem;
+        max-width: 52ch;
+        margin: 0 auto 0.5rem;
+      }
+
+      .thank-you__actions {
+        margin-top: 0.75rem;
+      }
+    </style>
   </head>
-  <body>
-    <main>
-      <p>Anfrage erhalten.</p>
-      <p>Danke. Ich melde mich persönlich innerhalb von 24h.</p>
+  <body class="thank-you-page">
+    <main class="thank-you">
+      <section class="card thank-you__card" aria-labelledby="thank-you-title">
+        <h1 id="thank-you-title">Anfrage erhalten</h1>
+        <p class="thank-you__lead">Danke. Ich melde mich persönlich innerhalb von 24h.</p>
+        <p class="thank-you__note">
+          Wenn du noch etwas Wichtiges hast, antworte einfach auf die Bestätigungsmail.
+        </p>
+        <div class="thank-you__actions">
+          <a class="btn btn--primary" href="/#anfrage">Zurück zur Seite</a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
